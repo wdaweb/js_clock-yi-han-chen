@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宇宙時鐘</title>
+    <link rel="stylesheet" href="./css/animate.css">
+    <style>
+        body {
+            margin: 0;
+            background: url(./images/star.jpeg)center;
+            /* background: url(./images/kristopher-roller-110203-unsplash-m.jpgss); */
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            /* background: #000; */
+        }
+
+        #ufo01 {
+            width: 150px;
+            transform: rotate(20deg);
+            animation-name: ufo01;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            animation-fill-mode: both;
+        }
+
+        @keyframes ufo01 {
+            0% {
+                transform: translate(10vw, 10vw);
+            }
+
+            50% {
+                transform: translate(15vw, 20vw);
+            }
+
+            100% {
+                transform: translate(10vw, 10vw);
+            }
+
+        }
+
+        #ufo02 {
+            width: 100px;
+            transform: rotate(40deg);
+            animation-name: ufo02;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            /* animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); */
+            animation-fill-mode: both;
+        }
+
+        @keyframes ufo02 {
+            0% {
+                transform: translate(50vw, 10vw);
+            }
+
+            40% {
+                transform: translate(30vw, 30vw);
+            }
+
+            70% {
+                transform: translate(10vw, 10vw);
+            }
+
+            100% {
+                transform: translate(50vw, 10vw);
+            }
+        }
+
+        #ufo03 {
+            width: 200px;
+            transform: rotate(40deg);
+            animation-name: ufo03;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            /* animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); */
+            animation-fill-mode: both;
+        }
+
+        @keyframes ufo03 {
+            0% {
+                transform: translate(60vw, 10vw);
+            }
+
+            40% {
+                transform: translate(70vw, 30vw);
+            }
+
+            70% {
+                transform: translate(40vw, 40vw);
+            }
+
+            100% {
+                transform: translate(60vw, 10vw);
+            }
+        }
+
+        #ufo04 {
+            width: 150px;
+            transform: rotate(40deg);
+            animation-name: ufo04;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            /* animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); */
+            animation-fill-mode: both;
+        }
+
+        @keyframes ufo04 {
+            0% {
+                transform: translate(60vw, 10vw);
+            }
+
+            50% {
+                transform: translate(60vw, 13vw);
+            }
+
+            100% {
+                transform: translate(60vw, 10vw);
+            }
+        }
+
+        /* 地球 */
+        #clock {
+            width: 550px;
+            height: 550px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+
+            background: url(./images/boll.png);
+        }
+
+
+
+        /* 外星人（時） */
+        #hour {
+            width: 75%;
+            height: 10px;
+            /* background-color: rgb(250, 219, 135); */
+            position: absolute;
+            top: calc(50% - 5px);
+            left: -25%;
+            border-radius: 5px;
+            transform-origin: right center;
+        }
+
+        #hour img {
+            width: 150px;
+            position: absolute;
+            bottom: -40px;
+            left: 0px;
+            filter: drop-shadow(0, 0, 10px rgba(225, 85, 85, 0.5));
+            transform: rotate(280deg)
+        }
+
+        /* 太空人（分） */
+        #minute {
+            width: 70%;
+            height: 10px;
+            /* background-color: rgb(179, 135, 250); */
+            position: absolute;
+            top: calc(50% - 5px);
+            left: -20%;
+            border-radius: 5px;
+            transform-origin: right center;
+        }
+
+        #minute img {
+            width: 118px;
+            position: absolute;
+            bottom: -50px;
+            left: 0px;
+            filter: drop-shadow(0, 0, 10px rgba(225, 85, 85, 0.5));
+            transform: rotate(245deg)
+        }
+
+        /* 火箭（秒） */
+        #second {
+            width: 70%;
+            height: 10px;
+            /* background-color: lightskyblue; */
+            position: absolute;
+            top: calc(50% - 5px);
+            left: -20%;
+            border-radius: 5px;
+            transform-origin: right center;
+        }
+
+        #second img {
+            width: 90px;
+            position: absolute;
+            bottom: -90px;
+            left: 0px;
+            filter: drop-shadow(0, 0, 10px rgba(225, 85, 85, 0.5))
+        }
+
+        .switch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            /* margin: auto; */
+            position: absolute;
+            top: 3%;
+            left: 45%;
+            transform: translate(-50% -50%);
+
+
+        }
+
+        .outside {
+            background-color: #aaa;
+            height: 100%;
+            width: 70px;
+            padding: 5px;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        .inside {
+            width: 25px;
+            height: 25px;
+            border-radius: 100px;
+            background-color: #fff;
+            pointer-events: none;
+        }
+
+        .switch span {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img id="ufo01" src="./images/ufo01.png">
+        <img id="ufo02" src="./images/ufo02.png">
+        <img id="ufo03" src="./images/ufo03.png">
+        <img id="ufo04" src="./images/ufo04.png">
+    </div>
+
+
+    <div id="clock">
+        <div id="hour">
+            <img src="./images/et.png" alt="ET" title="ET">
+        </div>
+        <div id="minute">
+            <img src="./images/man.png" alt="太空人" title="太空人">
+        </div>
+        <div id="second">
+            <img src="./images/火箭.png" alt="火箭" title="火箭">
+        </div>
+    </div>
+
+    <div class="switch">
+        <span>星空</span>
+        <div class="outside">
+            <div class="inside"></div>
+        </div>
+        <span>星座</span>
+    </div>
+
+
+
+
+
+    <script src="./jquery-2.1.4.min.js"></script>
+    <script>
+        const hour = document.getElementById('hour')
+        const minute = document.getElementById('minute')
+        const second = document.getElementById('second')
+
+        const clock = () => {
+            const date = new Date()
+            hour.style.transform = `rotate(${date.getHours() * 30 + 90}deg)`
+            minute.style.transform = `rotate(${date.getMinutes() * 6 + 90}deg)`
+            second.style.transform = `rotate(${date.getSeconds() * 6 + 90}deg)`
+        }
+
+        clock()
+        setInterval(clock, 1000)
+
+
+        // jq
+        let isMovedRight = false;
+        $('.outside').click(function () {
+            if (isMovedRight) {
+                $('.inside').css('transform', 'translateX(0)')
+                $('body').css('background', 'url(./images/star.jpeg)')
+                isMovedRight = false
+            } else {
+                $('.inside').css('transform', 'translateX(35px)')
+                $('body').css('background', 'url(./images/star_sign.jpg)')
+                isMovedRight = true
+            }
+        })
+    </script>
+</body>
+
+</html>
